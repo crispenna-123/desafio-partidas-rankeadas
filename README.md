@@ -1,10 +1,10 @@
 # ⚔️Desafio Calculadora de Partidas Rankeadas ⚔️
 
-## 📄 Descrição 📄
+## 📄 Descrição 
 
 Neste desafio, você deverá criar um programa que calcule o saldo de vitórias e classifique o nível de um jogador com base na quantidade de partidas vencidas em rankeadas. Utilizando variáveis, operadores, laços de repetição (opcional) e estruturas de decisão, o objetivo é criar um sistema de categorização conforme o número de vitórias.
 
-## ⚠️ O Que Deve Ser Utilizado ⚠️
+## ⚠️ O Que Deve Ser Utilizado 
 
 - Variáveis
 - Operadores
@@ -12,7 +12,7 @@ Neste desafio, você deverá criar um programa que calcule o saldo de vitórias 
 - Estruturas de decisão (obrigatório)
 - Funções
 
-## 🎯 Objetivo 🎯
+## 🎯 Objetivo 
 
 Você deverá criar uma função que recebe como parâmetros a quantidade de vitórias e derrotas de um jogador. Em seguida, o programa deverá calcular o saldo de partidas (vitórias - derrotas) e, com base no número total de vitórias, o jogador será classificado em uma categoria conforme os intervalos definidos.
 
