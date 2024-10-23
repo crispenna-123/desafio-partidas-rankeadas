@@ -7,27 +7,41 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
+// Função para determinar o nível do herói com base no saldo de partidas
 function determinarNivel(saldoPartidas) {
-  if (saldoPartidas > 10) {
+  if (saldoPartidas <= 10) {
     return "Ferro";
-  } else if (saldoPartidas <= 11 && saldoPartidas <= 20) {
+  } else if (saldoPartidas <= 20) {
     return "Bronze";
-  } else if (saldoPartidas <= 21 && saldoPartidas <= 50) {
+  } else if (saldoPartidas <= 50) {
     return "Prata";
-  } else if (saldoPartidas <= 51 && saldoPartidas <= 80) {
+  } else if (saldoPartidas <= 80) {
     return "Ouro";
-  } else if (saldoPartidas <= 81 && saldoPartidas <= 90) {
+  } else if (saldoPartidas <= 90) {
     return "Diamante";
-  } else if (saldoPartidas <= 91 && saldoPartidas <= 100) {
+  } else if (saldoPartidas <= 100) {
     return "Lendário";
-  } else if (saldoPartidas <= 101) {
+  } else if (saldoPartidas > 100) {
     return "Imortal";
+  } else {
+    return "Nível desconhecido"; // Para casos imprevistos
   }
 }
+
 // Passo 2: Solicitar número de vitórias e derrotas do herói
 rl.question("Digite o número de vitórias: ", (vitoria) => {
   rl.question("Digite o número de derrotas: ", (derrota) => {
-    const saldoPartidas = parseInt(vitoria) - parseInt(derrota); // Converter as entradas para número e calcular o saldo
+    const vitoriaNum = parseInt(vitoria);
+    const derrotaNum = parseInt(derrota);
+    
+    // Verificar se as entradas são números válidos
+    if (isNaN(vitoriaNum) || isNaN(derrotaNum)) {
+      console.log("Por favor, insira números válidos para vitórias e derrotas.");
+      rl.close();
+      return;
+    }
+
+    const saldoPartidas = vitoriaNum - derrotaNum; // Calcular o saldo
 
     // Determinar o nível do herói
     const nivel = determinarNivel(saldoPartidas);
